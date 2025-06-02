@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { Canvas } from "@react-three/fiber";
 import React, { ReactNode } from "react";
@@ -10,6 +10,7 @@ interface Props {
 export const Scene: React.FC<Props> = ({ children }) => {
   return (
     <Canvas
+      className="border flex-1"
       orthographic
       camera={{
         up: [0, 0, 1],
