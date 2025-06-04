@@ -16,7 +16,7 @@ export type Row =
         vehicles: {
             initialTileIndex: number
             color: THREE.ColorRepresentation
-        }
+        }[]
     }
     | {
         type: 'truck'
@@ -25,7 +25,7 @@ export type Row =
         vehicles: {
             initialTileIndex: number
             color: THREE.ColorRepresentation
-        }
+        }[]
 
 
     }

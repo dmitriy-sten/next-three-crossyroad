@@ -9,7 +9,7 @@ interface Props {
 export const Grass: React.FC<Props> = ({ children, rowIndex }) => {
   return (
     <group position-y={rowIndex * tileSize}>
-      <mesh>
+      <mesh receiveShadow>
         <boxGeometry args={[tilesPerRow * tileSize, tileSize, 3]} />
         <meshLambertMaterial color={0xbaf455} flatShading />
       </mesh>

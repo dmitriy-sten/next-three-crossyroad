@@ -21,5 +21,15 @@ export const rows: Row[] = [
             initialTileIndex: 2, color: 0xff0000
         }]
 
+    },
+
+    {
+        type: "truck",
+        direction: true,
+        speed: 1,
+        vehicles: [{
+            initialTileIndex: -4, color: 0xff0000
+        }]
+
     }
 ]

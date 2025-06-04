@@ -9,7 +9,7 @@ interface Props {
 export const Player: React.FC<Props> = ({ className }) => {
   return (
     <Bounds fit clip observe margin={10}>
-      <mesh position={[0, 0, 10]}>
+      <mesh receiveShadow castShadow position={[0, 0, 10]}>
         <boxGeometry args={[15, 15, 20]} />
         <meshLambertMaterial color={0xffffff} flatShading />
       </mesh>
