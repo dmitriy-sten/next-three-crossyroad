@@ -20,7 +20,7 @@ export const Scene: React.FC<Props> = ({ children }) => {
       }}
     >
       <ambientLight />
-      <DirectionalLight />
+      {/* <DirectionalLight /> */}
 
       {children}
     </Canvas>

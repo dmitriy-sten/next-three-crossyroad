@@ -3,6 +3,7 @@
 
 import type { MoveDirection } from "../types";
 import { endsUpInValidPosition } from "../utils/ends-up-in-valid-position";
+import { useStore } from "./map";
 
 
 export const state: {
@@ -37,5 +38,10 @@ export function stepCompleted() {
     if (direction === 'backward') state.currentRow -= 1
     if (direction === 'left') state.currentTile -= 1
     if (direction === 'right') state.currentTile += 1
+
+
+    if (state.currentRow === useStore.getState().rows.length - 10) {
+        useStore.getState().addRows()
+    }
 
 }

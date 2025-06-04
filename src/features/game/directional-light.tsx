@@ -1,12 +1,15 @@
-import React from "react";
+import React, { RefObject } from "react";
+import * as THREE from "three";
 
 interface Props {
   className?: string;
+  ref: RefObject<THREE.DirectionalLight | null>;
 }
 
-export const DirectionalLight: React.FC<Props> = ({ className }) => {
+export const DirectionalLight: React.FC<Props> = ({ ref }) => {
   return (
     <directionalLight
+      ref={ref}
       position={[-100, -100, 200]}
       up={[0, 0, 1]}
       castShadow

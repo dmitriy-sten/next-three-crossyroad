@@ -14,7 +14,7 @@ export default function useVehicleAnimation(
         const vehicle = ref?.current
 
         const beginningOfRow = (minTileIndex - 2) * tileSize
-        const endOfRow = (maxTileIndex) + 2 * tileSize
+        const endOfRow = (maxTileIndex)  * tileSize
 
 
         if (direction) {

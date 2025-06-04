@@ -1,13 +1,16 @@
+"use client";
+
 import React from "react";
 import { Grass } from "./grass";
-import { rows } from "@/shared/metadata";
 import { MapRow } from "./row";
+import { useStore } from "@/shared/stores/map";
 
 interface Props {
   className?: string;
 }
 
 export const Map: React.FC<Props> = ({ className }) => {
+  const rows = useStore((state) => state.rows);
   return (
     <>
       <Grass rowIndex={0} />
