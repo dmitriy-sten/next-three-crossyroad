@@ -5,7 +5,7 @@ export type RowType = 'forest' | "car" | "truck"
 
 
 export type Row =
-   | {
+    | {
         type: "forest"
         trees: { tileIndex: number, height: number }[]
     }
@@ -30,3 +30,6 @@ export type Row =
 
     }
 
+
+
+export type MoveDirection = 'forward' | "backward" | "left" | "right" 

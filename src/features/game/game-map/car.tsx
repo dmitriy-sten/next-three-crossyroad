@@ -1,6 +1,10 @@
+"use client";
+
 import { tileSize } from "@/shared/constants";
 import * as THREE from "three";
 import { Wheel } from "./wheel";
+import { useRef } from "react";
+import useVehicleAnimation from "@/shared/hooks/use-vehicle-animation";
 
 type Props = {
   rowIndex: number;
@@ -17,8 +21,12 @@ export function Car({
   speed,
   color,
 }: Props) {
+  const car = useRef<THREE.Group>(null);
+  useVehicleAnimation(car, direction, speed);
+
   return (
     <group
+      ref={car}
       position-x={initialTileIndex * tileSize}
       rotation-z={direction ? 0 : Math.PI}
     >

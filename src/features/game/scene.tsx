@@ -16,7 +16,7 @@ export const Scene: React.FC<Props> = ({ children }) => {
       orthographic
       camera={{
         up: [0, 0, 1],
-        position: [300, -300, 300],
+        position: [600, -600, 600],
       }}
     >
       <ambientLight />
