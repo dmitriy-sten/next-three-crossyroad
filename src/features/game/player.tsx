@@ -5,6 +5,7 @@ import { useThree } from "@react-three/fiber";
 import React, { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { DirectionalLight } from "./directional-light";
+import { setRef } from "@/shared/stores/player";
 
 interface Props {
   className?: string;
@@ -19,10 +20,12 @@ export const Player: React.FC<Props> = ({ className }) => {
 
   useEffect(() => {
     if (!player.current) return;
-    if(!lightRef.current) return
+    if (!lightRef.current) return;
 
     player.current.add(camera);
-    lightRef.current.target = player.current
+    lightRef.current.target = player.current;
+
+    setRef(player.current);
   });
 
   return (
@@ -39,7 +42,7 @@ export const Player: React.FC<Props> = ({ className }) => {
             <meshLambertMaterial color={0xf0619a} flatShading />
           </mesh>
         </group>
-        <DirectionalLight  ref={lightRef}/>
+        <DirectionalLight ref={lightRef} />
       </group>
     </Bounds>
   );

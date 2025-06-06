@@ -1,10 +1,11 @@
-'use client'
+"use client";
 
 import { tileSize } from "@/shared/constants";
 import * as THREE from "three";
 import { Wheel } from "./wheel";
 import { useRef } from "react";
 import useVehicleAnimation from "@/shared/hooks/use-vehicle-animation";
+import { useHitDetection } from "@/shared/hooks/use-hit-detection";
 
 type Props = {
   rowIndex: number;
@@ -23,6 +24,7 @@ export function Truck({
 }: Props) {
   const truck = useRef<THREE.Group>(null);
   useVehicleAnimation(truck, direction, speed);
+  useHitDetection(truck, rowIndex);
 
   return (
     <group

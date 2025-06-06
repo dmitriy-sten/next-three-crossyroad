@@ -4,7 +4,8 @@ import type { Row } from "../types";
 
 interface StoreState {
     rows: Row[],
-    addRows: () => void
+    addRows: () => void,
+    reset: () => void
 }
 
 
@@ -13,6 +14,9 @@ export const useStore = create<StoreState>((set) => ({
     addRows: () => {
         const newRows = generateRows(20)
         set((state) => ({ rows: [...state.rows, ...newRows] }))
-    }
+
+    },
+
+    reset: () => set({ rows: generateRows(20) })
 }))
 

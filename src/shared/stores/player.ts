@@ -3,17 +3,20 @@
 
 import type { MoveDirection } from "../types";
 import { endsUpInValidPosition } from "../utils/ends-up-in-valid-position";
+import { useGameStore } from "./game";
 import { useStore } from "./map";
-
+import * as THREE from 'three'
 
 export const state: {
     currentRow: number;
     currentTile: number
     movesQueue: MoveDirection[]
+    ref: THREE.Object3D | null
 } = {
     currentRow: 0,
     currentTile: 0,
-    movesQueue: []
+    movesQueue: [],
+    ref: null
 }
 
 
@@ -43,5 +46,27 @@ export function stepCompleted() {
     if (state.currentRow === useStore.getState().rows.length - 10) {
         useStore.getState().addRows()
     }
+
+    useGameStore.getState().updateScore(state.currentRow)
+
+}
+
+
+export function setRef(ref: THREE.Object3D) {
+    state.ref = ref
+}
+
+
+export function reset() {
+
+    state.currentRow = 0
+    state.currentTile = 0
+    state.movesQueue = []
+
+    if (!state.ref) return
+
+    state.ref.position.x = 0
+    state.ref.position.y = 0
+    state.ref.children[0].rotation.z = 0
 
 }

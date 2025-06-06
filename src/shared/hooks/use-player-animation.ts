@@ -2,13 +2,16 @@ import * as THREE from "three";
 import { useFrame } from "@react-three/fiber";
 import { state, stepCompleted } from "../stores/player";
 import { tileSize } from "../constants";
+import { useGameStore } from "../stores/game";
 
 export default function usePlayerAnimation(
     ref: React.RefObject<THREE.Group | null>
 ) {
     const moveClock = new THREE.Clock(false);
+    const {status} = useGameStore()
 
     useFrame(() => {
+        if(status === 'over') return
         if (!ref.current) return;
         if (!state.movesQueue.length) return;
         const player = ref.current;
