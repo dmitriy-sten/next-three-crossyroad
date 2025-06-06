@@ -9,7 +9,7 @@ interface Props {
   className?: string;
 }
 
-export const Map: React.FC<Props> = ({ className }) => {
+export const Map: React.FC<Props> = ({  }) => {
   const rows = useStore((state) => state.rows);
   return (
     <>

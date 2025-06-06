@@ -10,7 +10,7 @@ interface Props {
   className?: string;
 }
 
-export const Game: React.FC<Props> = ({ className }) => {
+export const Game: React.FC<Props> = ({  }) => {
   return (
     <div className="flex-1 relative">
       <Scene>

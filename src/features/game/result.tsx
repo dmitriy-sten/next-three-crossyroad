@@ -7,7 +7,7 @@ interface Props {
   className?: string;
 }
 
-export const Result: React.FC<Props> = ({ className }) => {
+export const Result: React.FC<Props> = ({  }) => {
   const { score, status, reset } = useGameStore();
 
   if (status === "running") return null;

@@ -11,7 +11,7 @@ interface Props {
 const btnStyle =
   "w-full h-10 bg-white border border-gray-300 cursor-pointer outline-none shadow-lg";
 
-export const Controls: React.FC<Props> = ({ className }) => {
+export const Controls: React.FC<Props> = ({  }) => {
   useEventListeners();
 
   return (

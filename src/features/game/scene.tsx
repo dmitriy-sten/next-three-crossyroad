@@ -2,7 +2,6 @@
 
 import { Canvas } from "@react-three/fiber";
 import React, { ReactNode } from "react";
-import { DirectionalLight } from "./directional-light";
 
 interface Props {
   children: ReactNode;
